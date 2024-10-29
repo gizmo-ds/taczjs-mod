@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "package": "dev.aika.taczjs.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "client.ClientGunIndexLoaderMixin",
+    "client.ClientGunIndexMixin",
+    "client.InteractKeyTextOverlayMixin",
+    "client.LocalPlayerAimMixin",
+    "client.LocalPlayerMeleeMixin",
+    "client.LocalPlayerReloadMixin",
+    "client.LocalPlayerShootMixin"
+  ],
+  "mixins": [
+    "asset.AttachmentDataLoaderMixin",
+    "asset.AttachmentTagsLoaderMixin",
+    "asset.GunDataLoaderMixin",
+    "asset.RecipeLoaderMixin",
+    "index.CommonAmmoIndexLoaderMixin",
+    "index.CommonAttachmentIndexLoaderMixin",
+    "index.CommonGunIndexLoaderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "server": [
+  ]
+}

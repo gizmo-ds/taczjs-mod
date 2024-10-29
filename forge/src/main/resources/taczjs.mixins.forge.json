@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "dev.aika.taczjs.forge.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "client.ClientPreventGunClickMixin",
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "server": [
+  ]
+}

@@ -1,0 +1,42 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+issueTrackerURL = "https://github.com/gizmo-ds/taczjs-mod/issues"
+license = "GNU GPL 3.0"
+
+[[mods]]
+modId = "taczjs"
+version = "${version}"
+displayName = "TaCZ JS"
+authors = "Gizmo"
+description = '''
+KubeJS TaCZ integration
+'''
+logoFile = "taczjs-icon.png"
+
+[[dependencies.taczjs]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.taczjs]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.taczjs]]
+modId = "kubejs"
+mandatory = true
+versionRange = "[2001.6.4-build.95,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.taczjs]]
+modId = "tacz"
+mandatory = true
+versionRange = "[1.0.1,1.0.4)"
+ordering = "NONE"
+side = "BOTH"
