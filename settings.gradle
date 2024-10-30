@@ -10,4 +10,5 @@ pluginManagement {
 rootProject.name = 'taczjs'
 
 include 'common'
+include 'fabric'
 include 'forge'

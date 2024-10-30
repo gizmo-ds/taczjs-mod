@@ -33,4 +33,6 @@ jobs:
         uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: forge/build/libs/*mc1.20.1.jar
+          files: |
+            forge/build/libs/*mc1.20.1.jar
+            fabric/build/libs/*mc1.20.1.jar
