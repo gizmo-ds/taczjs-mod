@@ -14,7 +14,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 
 @SuppressWarnings("unused")
 @Environment(EnvType.CLIENT)
@@ -95,17 +94,17 @@ public abstract class AbstractClientGunEvent extends ClientEventJS {
                 transitionTimeS);
     }
 
-//    public BlockHitResult getBlockHitResult() {
-//        var hitResult = Minecraft.getInstance().hitResult;
-//        if (hitResult instanceof BlockHitResult result) return result;
-//        return null;
-//    }
-//
-//    public EntityHitResult getEntityHitResult() {
-//        var hitResult = Minecraft.getInstance().hitResult;
-//        if (hitResult instanceof EntityHitResult result) return result;
-//        return null;
-//    }
+    public BlockHitResult getBlockHitResult() {
+        var hitResult = Minecraft.getInstance().hitResult;
+        if (hitResult instanceof BlockHitResult result) return result;
+        return null;
+    }
+
+    public EntityHitResult getEntityHitResult() {
+        var hitResult = Minecraft.getInstance().hitResult;
+        if (hitResult instanceof EntityHitResult result) return result;
+        return null;
+    }
 
     public boolean canInteractEntity() {
         var hitResult = Minecraft.getInstance().hitResult;
