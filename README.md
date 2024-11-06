@@ -6,7 +6,7 @@
 
 This mod was created to support my own modpack, with only the features I use and find useful.
 
-For usage examples, please refer to the `example` directory in this repository. This directory contains sample code and
+For usage examples, please refer to the [`example`](./example) directory in this repository. This directory contains sample code and
 demonstrations to help you get started with the mod.
 
 ## License

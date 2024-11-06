@@ -6,7 +6,7 @@ const MeleeWeapons = [
     "create_armorer:special_melee_atomic",
 ];
 
-TaCZJSEvents.onGunIndexLoad((event) => {
+TaCZJSEvents.onClientGunIndexLoad((event) => {
     if (MeleeWeapons.includes(event.getGunId().toString())) {
         // 为近战武器添加原版交互设置
         event.setVanillaInteract(true);

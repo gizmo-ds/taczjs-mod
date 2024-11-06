@@ -23,7 +23,7 @@ public interface JSEvents {
     EventHandler AMMO_INDEX_LOAD_REGISTER = GROUP.startup("onAmmoIndexLoad", () -> AmmoIndexLoadEvent.class);
     EventHandler ATTACHMENT_INDEX_LOAD_REGISTER = GROUP.startup("onAttachmentIndexLoad", () -> AttachmentIndexLoadEvent.class);
 
-    EventHandler CLIENT_GUN_INDEX_LOAD_REGISTER = GROUP.client("onGunIndexLoad", () -> ClientGunIndexLoadEvent.class);
+    EventHandler CLIENT_GUN_INDEX_LOAD_REGISTER = GROUP.client("onClientGunIndexLoad", () -> ClientGunIndexLoadEvent.class);
     EventHandler CLIENT_LOCAL_PLAYER_AIM_REGISTER = GROUP.client("onAim", () -> LocalPlayerAimEvent.class);
     EventHandler CLIENT_LOCAL_PLAYER_SHOOT_REGISTER = GROUP.client("onShoot", () -> LocalPlayerShootEvent.class);
     EventHandler CLIENT_LOCAL_PLAYER_MELEE_REGISTER = GROUP.client("onMelee", () -> LocalPlayerMeleeEvent.class);
