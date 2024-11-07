@@ -41,4 +41,8 @@ public abstract class AbstractShooterEvent extends LivingEntityEventJS {
         if (gunItem.getItem() instanceof IGun iGun) return iGun.getGunId(gunItem);
         return null;
     }
+
+    public ItemStack getGunItem() {
+        return gunItem;
+    }
 }
