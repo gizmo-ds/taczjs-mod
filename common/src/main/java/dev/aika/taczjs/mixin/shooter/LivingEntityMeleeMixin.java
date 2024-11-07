@@ -1,6 +1,8 @@
 package dev.aika.taczjs.mixin.shooter;
 
+import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.entity.shooter.LivingEntityMelee;
+import com.tacz.guns.entity.shooter.ShooterDataHolder;
 import dev.aika.taczjs.events.ModServerEvents;
 import dev.aika.taczjs.events.shooter.LivingEntityMeleeEvent;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,9 +19,14 @@ public abstract class LivingEntityMeleeMixin {
     @Final
     private LivingEntity shooter;
 
+    @Shadow
+    @Final
+    private ShooterDataHolder data;
+
     @Inject(method = "melee", at = @At("HEAD"), cancellable = true)
     private void onMelee(CallbackInfo ci) {
-        var event = new LivingEntityMeleeEvent(this.shooter);
+        if (this.data.currentGunItem == null || !(this.data.currentGunItem.get().getItem() instanceof IGun)) return;
+        var event = new LivingEntityMeleeEvent(this.shooter, this.data.currentGunItem.get());
         ModServerEvents.ENTITY_MELEE_REGISTER.post(event);
         if (event.isCancelled()) ci.cancel();
     }

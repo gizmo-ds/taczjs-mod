@@ -1,6 +1,5 @@
 package dev.aika.taczjs.mixin.client;
 
-import com.tacz.guns.client.resource.ClientGunPackLoader;
 import com.tacz.guns.client.resource.loader.index.ClientGunIndexLoader;
 import com.tacz.guns.resource.index.CommonGunIndex;
 import dev.aika.taczjs.events.ModClientEvents;
@@ -23,9 +22,7 @@ public abstract class ClientGunIndexLoaderMixin {
             target = "Ljava/util/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
             shift = At.Shift.AFTER))
     private static void loadGunIndex(Map.Entry<ResourceLocation, CommonGunIndex> index, CallbackInfo ci) {
-        var id = index.getKey();
-        var gunIndex = ClientGunPackLoader.GUN_INDEX.get(id);
-        var event = new ClientGunIndexLoadEvent(id, gunIndex);
+        var event = new ClientGunIndexLoadEvent(index.getKey());
         ModClientEvents.GUN_INDEX_LOAD_REGISTER.post(event);
     }
 }

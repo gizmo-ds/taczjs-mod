@@ -1,6 +1,5 @@
 package dev.aika.taczjs.events.client;
 
-import com.tacz.guns.client.resource.index.ClientGunIndex;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.resources.ResourceLocation;
@@ -10,8 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 public class LocalPlayerAimEvent extends AbstractClientGunEvent {
     private final boolean isAim;
 
-    public LocalPlayerAimEvent(boolean isAim, ResourceLocation gunId, ClientGunIndex gunIndex) {
-        super(gunId, gunIndex);
+    public LocalPlayerAimEvent(boolean isAim, ResourceLocation gunId) {
+        super(gunId);
         this.isAim = isAim;
     }
 

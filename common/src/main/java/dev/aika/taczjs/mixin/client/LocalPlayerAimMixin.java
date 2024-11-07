@@ -5,7 +5,6 @@ import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.client.gameplay.LocalPlayerAim;
 import dev.aika.taczjs.events.ModClientEvents;
 import dev.aika.taczjs.events.client.LocalPlayerAimEvent;
-import dev.aika.taczjs.helper.ModClientHelper;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.player.LocalPlayer;
@@ -27,12 +26,9 @@ public abstract class LocalPlayerAimMixin {
     private void aim(boolean isAim, CallbackInfo ci) {
         var mainHandItem = this.player.getMainHandItem();
         if (mainHandItem.getItem() instanceof IGun iGun) {
-            var gunId = iGun.getGunId(mainHandItem);
-            ModClientHelper.getClientGunIndex(gunId).ifPresent(gunIndex -> {
-                var event = new LocalPlayerAimEvent(isAim, gunId, gunIndex);
-                ModClientEvents.PLAYER_AIM_REGISTER.post(event);
-                if (event.isCancelled()) ci.cancel();
-            });
+            var event = new LocalPlayerAimEvent(isAim, iGun.getGunId(mainHandItem));
+            ModClientEvents.PLAYER_AIM_REGISTER.post(event);
+            if (event.isCancelled()) ci.cancel();
         }
     }
 }

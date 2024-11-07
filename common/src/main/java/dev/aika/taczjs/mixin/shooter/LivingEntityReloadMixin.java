@@ -1,6 +1,7 @@
 package dev.aika.taczjs.mixin.shooter;
 
 import com.tacz.guns.entity.shooter.LivingEntityReload;
+import com.tacz.guns.entity.shooter.ShooterDataHolder;
 import dev.aika.taczjs.events.ModServerEvents;
 import dev.aika.taczjs.events.shooter.LivingEntityReloadEvent;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,9 +18,16 @@ public abstract class LivingEntityReloadMixin {
     @Final
     private LivingEntity shooter;
 
-    @Inject(method = "reload", at = @At("HEAD"), cancellable = true)
+    @Shadow
+    @Final
+    private ShooterDataHolder data;
+
+    @Inject(method = "reload", at = @At(value = "INVOKE",
+            target = "Lcom/tacz/guns/api/item/IGun;getGunId(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/resources/ResourceLocation;"),
+            cancellable = true)
     private void onReload(CallbackInfo ci) {
-        var event = new LivingEntityReloadEvent(this.shooter);
+        assert this.data.currentGunItem != null;
+        var event = new LivingEntityReloadEvent(this.shooter, this.data.currentGunItem.get());
         ModServerEvents.ENTITY_RELOAD_REGISTER.post(event);
         if (event.isCancelled()) ci.cancel();
     }

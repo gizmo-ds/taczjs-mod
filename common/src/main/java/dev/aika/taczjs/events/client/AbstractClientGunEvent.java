@@ -1,5 +1,6 @@
 package dev.aika.taczjs.events.client;
 
+import com.tacz.guns.api.TimelessAPI;
 import com.tacz.guns.api.client.animation.ObjectAnimation;
 import com.tacz.guns.api.client.gameplay.IClientPlayerGunOperator;
 import com.tacz.guns.client.animation.statemachine.GunAnimationStateMachine;
@@ -21,11 +22,9 @@ import net.minecraft.world.phys.EntityHitResult;
 public abstract class AbstractClientGunEvent extends ClientEventJS {
     private Boolean cancelled = false;
     private final ResourceLocation gunId;
-    private final ClientGunIndex gunIndex;
 
-    AbstractClientGunEvent(ResourceLocation gunId, ClientGunIndex gunIndex) {
+    AbstractClientGunEvent(ResourceLocation gunId) {
         this.gunId = gunId;
-        this.gunIndex = gunIndex;
     }
 
     public ResourceLocation getGunId() {
@@ -33,7 +32,7 @@ public abstract class AbstractClientGunEvent extends ClientEventJS {
     }
 
     public ClientGunIndex getGunIndex() {
-        return gunIndex;
+        return TimelessAPI.getClientGunIndex(gunId).orElse(null);
     }
 
     @HideFromJS
@@ -47,12 +46,12 @@ public abstract class AbstractClientGunEvent extends ClientEventJS {
     }
 
     public void setVanillaInteract(boolean v) {
-        if (gunIndex instanceof IClientGun iClientGun)
+        if (getGunIndex() instanceof IClientGun iClientGun)
             iClientGun.setVanillaInteract(v);
     }
 
     public boolean isVanillaInteract() {
-        if (gunIndex instanceof IClientGun iClientGun)
+        if (getGunIndex() instanceof IClientGun iClientGun)
             return iClientGun.isVanillaInteract();
         return false;
     }

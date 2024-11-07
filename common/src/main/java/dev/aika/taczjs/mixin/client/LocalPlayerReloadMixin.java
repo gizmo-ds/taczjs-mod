@@ -4,7 +4,6 @@ import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.client.gameplay.LocalPlayerReload;
 import dev.aika.taczjs.events.ModClientEvents;
 import dev.aika.taczjs.events.client.LocalPlayerReloadEvent;
-import dev.aika.taczjs.helper.ModClientHelper;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.player.LocalPlayer;
@@ -26,12 +25,9 @@ public abstract class LocalPlayerReloadMixin {
     private void reload(CallbackInfo ci) {
         var mainHandItem = this.player.getMainHandItem();
         if (mainHandItem.getItem() instanceof IGun iGun) {
-            var gunId = iGun.getGunId(mainHandItem);
-            ModClientHelper.getClientGunIndex(gunId).ifPresent(gunIndex -> {
-                var event = new LocalPlayerReloadEvent(gunId, gunIndex);
-                ModClientEvents.PLAYER_RELOAD_REGISTER.post(event);
-                if (event.isCancelled()) ci.cancel();
-            });
+            var event = new LocalPlayerReloadEvent(iGun.getGunId(mainHandItem));
+            ModClientEvents.PLAYER_RELOAD_REGISTER.post(event);
+            if (event.isCancelled()) ci.cancel();
         }
     }
 }
