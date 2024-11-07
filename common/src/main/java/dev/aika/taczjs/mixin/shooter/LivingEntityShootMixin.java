@@ -1,6 +1,7 @@
 package dev.aika.taczjs.mixin.shooter;
 
 import com.tacz.guns.api.entity.ShootResult;
+import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.entity.shooter.LivingEntityShoot;
 import com.tacz.guns.entity.shooter.ShooterDataHolder;
 import dev.aika.taczjs.events.ModServerEvents;
@@ -25,11 +26,9 @@ public abstract class LivingEntityShootMixin {
     @Final
     private ShooterDataHolder data;
 
-    @Inject(method = "shoot", at = @At(value = "INVOKE",
-            target = "Lcom/tacz/guns/api/item/IGun;getGunId(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/resources/ResourceLocation;"),
-            cancellable = true)
+    @Inject(method = "shoot", at = @At("HEAD"), cancellable = true)
     private void onShoot(Supplier<Float> pitch, Supplier<Float> yaw, CallbackInfoReturnable<ShootResult> cir) {
-        assert this.data.currentGunItem != null;
+        if (this.data.currentGunItem == null || !(this.data.currentGunItem.get().getItem() instanceof IGun)) return;
         var event = new LivingEntityShootEvent(this.shooter, this.data.currentGunItem.get());
         ModServerEvents.ENTITY_SHOOT_REGISTER.post(event);
         if (event.isCancelled()) cir.setReturnValue(ShootResult.NOT_GUN);
