@@ -5,7 +5,8 @@ declare class TaCZServerEvents {
     static entityReload(event: LivingEntityReloadEvent);
 }
 
-type LivingEntity = any; // net.minecraft.world.entity.LivingEntity
+/** net.minecraft.world.entity.LivingEntity */
+type LivingEntity = any;
 
 interface AbstractShooterEvent {
     getEntity(): LivingEntity;

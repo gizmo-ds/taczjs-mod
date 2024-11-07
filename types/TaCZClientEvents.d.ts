@@ -12,14 +12,19 @@ declare enum AnimationPlayType {
     LOOP,
 }
 
-// com.tacz.guns.client.sound.SoundPlayManager
+/** com.tacz.guns.client.sound.SoundPlayManager */
 declare class SoundPlayManager {}
 
-type ResourceLocation = any; // net.minecraft.resources.ResourceLocation
-type ClientGunIndex = any; // com.tacz.guns.client.resource.index.ClientGunIndex
-type IClientPlayerGunOperator = any; // com.tacz.guns.api.client.gameplay.IClientPlayerGunOperator
-type BlockHitResult = any; // net.minecraft.world.phys.BlockHitResult
-type EntityHitResult = any; // net.minecraft.world.phys.EntityHitResult
+/** net.minecraft.resources.ResourceLocation */
+type ResourceLocation = any;
+/** com.tacz.guns.client.resource.index.ClientGunIndex */
+type ClientGunIndex = any;
+/** com.tacz.guns.api.client.gameplay.IClientPlayerGunOperator */
+type IClientPlayerGunOperator = any;
+/** net.minecraft.world.phys.BlockHitResult */
+type BlockHitResult = any;
+/** net.minecraft.world.phys.EntityHitResult */
+type EntityHitResult = any;
 type float = number;
 
 interface AbstractClientGunEvent {

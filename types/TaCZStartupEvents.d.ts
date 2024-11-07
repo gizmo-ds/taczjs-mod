@@ -12,13 +12,20 @@ declare class TaCZStartupEvents {
     static attachmentIndexLoad(event: AttachmentIndexLoadEvent);
 }
 
-type ResourceLocation = any; // net.minecraft.resources.ResourceLocation
-type TableRecipe = any; // com.tacz.guns.resource.pojo.data.recipe.TableRecipe
-type GunData = any; // com.tacz.guns.resource.pojo.data.gun.GunData
-type AttachmentData = any; // com.tacz.guns.resource.pojo.data.attachment.AttachmentData
-type GunIndexPOJO = any; // com.tacz.guns.resource.pojo.GunIndexPOJO
-type AmmoIndexPOJO = any; // com.tacz.guns.resource.pojo.AmmoIndexPOJO
-type AttachmentIndexPOJO = any; // com.tacz.guns.resource.pojo.AttachmentIndexPOJO
+/** net.minecraft.resources.ResourceLocation */
+type ResourceLocation = any;
+/** com.tacz.guns.resource.pojo.data.recipe.TableRecipe */
+type TableRecipe = any;
+/** com.tacz.guns.resource.pojo.data.gun.GunData */
+type GunData = any;
+/** com.tacz.guns.resource.pojo.data.attachment.AttachmentData */
+type AttachmentData = any;
+/** com.tacz.guns.resource.pojo.GunIndexPOJO */
+type GunIndexPOJO = any;
+/** com.tacz.guns.resource.pojo.AmmoIndexPOJO */
+type AmmoIndexPOJO = any;
+/** com.tacz.guns.resource.pojo.AttachmentIndexPOJO */
+type AttachmentIndexPOJO = any;
 
 interface AbstractLoadEvent {
     getId(): ResourceLocation;
