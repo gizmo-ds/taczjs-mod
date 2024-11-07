@@ -2,7 +2,7 @@ package dev.aika.taczjs.mixin.client;
 
 import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.client.gameplay.LocalPlayerMelee;
-import dev.aika.taczjs.events.JSEvents;
+import dev.aika.taczjs.events.ModClientEvents;
 import dev.aika.taczjs.events.client.LocalPlayerMeleeEvent;
 import dev.aika.taczjs.helper.ModClientHelper;
 import net.fabricmc.api.EnvType;
@@ -29,7 +29,7 @@ public abstract class LocalPlayerMeleeMixin {
             var gunId = iGun.getGunId(mainHandItem);
             ModClientHelper.getClientGunIndex(gunId).ifPresent(gunIndex -> {
                 var event = new LocalPlayerMeleeEvent(gunId, gunIndex);
-                JSEvents.CLIENT_LOCAL_PLAYER_MELEE_REGISTER.post(event);
+                ModClientEvents.PLAYER_MELEE_REGISTER.post(event);
                 if (event.isCancelled()) ci.cancel();
             });
         }

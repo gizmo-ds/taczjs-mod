@@ -19,7 +19,11 @@
     "asset.RecipeLoaderMixin",
     "index.CommonAmmoIndexLoaderMixin",
     "index.CommonAttachmentIndexLoaderMixin",
-    "index.CommonGunIndexLoaderMixin"
+    "index.CommonGunIndexLoaderMixin",
+    "shooter.LivingEntityAimMixin",
+    "shooter.LivingEntityMeleeMixin",
+    "shooter.LivingEntityReloadMixin",
+    "shooter.LivingEntityShootMixin"
   ],
   "injectors": {
     "defaultRequire": 1

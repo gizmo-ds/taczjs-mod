@@ -6,7 +6,7 @@ import com.tacz.guns.resource.loader.index.CommonAttachmentIndexLoader;
 import com.tacz.guns.resource.network.CommonGunPackNetwork;
 import com.tacz.guns.resource.network.DataType;
 import dev.aika.taczjs.events.index.AttachmentIndexLoadEvent;
-import dev.aika.taczjs.events.JSEvents;
+import dev.aika.taczjs.events.ModStartupEvents;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,7 +18,7 @@ public abstract class CommonAttachmentIndexLoaderMixin {
     @Inject(method = "loadAttachmentFromJsonString", at = @At("HEAD"), cancellable = true)
     private static void load(ResourceLocation id, String json, CallbackInfo ci) {
         var event = new AttachmentIndexLoadEvent(id, json);
-        JSEvents.ATTACHMENT_INDEX_LOAD_REGISTER.post(event);
+        ModStartupEvents.ATTACHMENT_INDEX_LOAD_REGISTER.post(event);
         if (event.isRemove()) {
             ci.cancel();
             return;

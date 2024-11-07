@@ -6,13 +6,13 @@ const recipes = {
     }),
 };
 
-TaCZJSEvents.onRecipeLoad((event) => {
+TaCZStartupEvents.recipeLoad((event) => {
     // 移除任何配方
     return event.removeRecipe();
 });
 
 // 在 TaCZ 的配方加载流程结束后
-TaCZJSEvents.onRecipeLoadEnd((event) => {
+TaCZStartupEvents.recipeLoadEnd((event) => {
     // 添加新的配方
     for (const [key, value] of Object.entries(recipes)) {
         event.addRecipe(new ResourceLocation(key), value);

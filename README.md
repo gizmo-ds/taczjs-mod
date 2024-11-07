@@ -2,12 +2,12 @@
 
 [KubeJS](https://github.com/KubeJS-Mods/KubeJS) [TaCZ](https://github.com/MCModderAnchor/TACZ) integration.
 
-## About
-
 This mod was created to support my own modpack, with only the features I use and find useful.
 
-For usage examples, please refer to the [`example`](./example) directory in this repository. This directory contains sample code and
-demonstrations to help you get started with the mod.
+For usage examples, please refer to the [`example`](./example) directory in this repository. This directory contains
+sample code and demonstrations to help you get started with the mod.
+
+You can also view the typescript type declaration file in the [types](./types) directory.
 
 ## License
 

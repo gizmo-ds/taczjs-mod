@@ -5,7 +5,7 @@ import com.tacz.guns.resource.index.CommonAmmoIndex;
 import com.tacz.guns.resource.loader.index.CommonAmmoIndexLoader;
 import com.tacz.guns.resource.network.CommonGunPackNetwork;
 import com.tacz.guns.resource.network.DataType;
-import dev.aika.taczjs.events.JSEvents;
+import dev.aika.taczjs.events.ModStartupEvents;
 import dev.aika.taczjs.events.index.AmmoIndexLoadEvent;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,7 +18,7 @@ public abstract class CommonAmmoIndexLoaderMixin {
     @Inject(method = "loadAmmoFromJsonString", at = @At("HEAD"), cancellable = true)
     private static void load(ResourceLocation id, String json, CallbackInfo ci) {
         var event = new AmmoIndexLoadEvent(id, json);
-        JSEvents.AMMO_INDEX_LOAD_REGISTER.post(event);
+        ModStartupEvents.AMMO_INDEX_LOAD_REGISTER.post(event);
         if (event.isRemove()) {
             ci.cancel();
             return;

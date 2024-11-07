@@ -4,7 +4,7 @@ import com.tacz.guns.resource.CommonAssetManager;
 import com.tacz.guns.resource.loader.asset.GunDataLoader;
 import com.tacz.guns.resource.network.CommonGunPackNetwork;
 import com.tacz.guns.resource.network.DataType;
-import dev.aika.taczjs.events.JSEvents;
+import dev.aika.taczjs.events.ModStartupEvents;
 import dev.aika.taczjs.events.asset.GunDataLoadEvent;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +19,7 @@ public abstract class GunDataLoaderMixin {
     @Inject(method = "loadFromJsonString", at = @At("HEAD"), cancellable = true)
     private static void load(ResourceLocation id, String json, CallbackInfo ci) {
         var event = new GunDataLoadEvent(id, json);
-        JSEvents.GUN_DATA_LOAD_REGISTER.post(event);
+        ModStartupEvents.GUN_DATA_LOAD_REGISTER.post(event);
         if (event.isRemove()) {
             ci.cancel();
             return;

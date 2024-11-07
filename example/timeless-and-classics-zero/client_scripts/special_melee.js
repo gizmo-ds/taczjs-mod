@@ -6,14 +6,14 @@ const MeleeWeapons = [
     "create_armorer:special_melee_atomic",
 ];
 
-TaCZJSEvents.onClientGunIndexLoad((event) => {
+TaCZClientEvents.gunIndexLoad((event) => {
     if (MeleeWeapons.includes(event.getGunId().toString())) {
         // 为近战武器添加原版交互设置
         event.setVanillaInteract(true);
     }
 });
 
-TaCZJSEvents.onAim((event) => {
+TaCZClientEvents.playerAim((event) => {
     if (MeleeWeapons.includes(event.getGunId().toString())) {
         // 只处理开始瞄准的事件
         if (!event.isAim()) return;
@@ -42,7 +42,7 @@ TaCZJSEvents.onAim((event) => {
     }
 });
 
-TaCZJSEvents.onShoot((event) => {
+TaCZClientEvents.playerShoot((event) => {
     if (MeleeWeapons.includes(event.getGunId().toString())) {
         // 如果近战武器进行射击, 取消射击并执行近战
         event.cancelShoot();

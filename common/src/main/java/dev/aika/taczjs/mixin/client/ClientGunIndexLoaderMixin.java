@@ -3,7 +3,7 @@ package dev.aika.taczjs.mixin.client;
 import com.tacz.guns.client.resource.ClientGunPackLoader;
 import com.tacz.guns.client.resource.loader.index.ClientGunIndexLoader;
 import com.tacz.guns.resource.index.CommonGunIndex;
-import dev.aika.taczjs.events.JSEvents;
+import dev.aika.taczjs.events.ModClientEvents;
 import dev.aika.taczjs.events.client.ClientGunIndexLoadEvent;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -26,6 +26,6 @@ public abstract class ClientGunIndexLoaderMixin {
         var id = index.getKey();
         var gunIndex = ClientGunPackLoader.GUN_INDEX.get(id);
         var event = new ClientGunIndexLoadEvent(id, gunIndex);
-        JSEvents.CLIENT_GUN_INDEX_LOAD_REGISTER.post(event);
+        ModClientEvents.GUN_INDEX_LOAD_REGISTER.post(event);
     }
 }
