@@ -9,11 +9,14 @@ declare class TaCZServerEvents {
 type LivingEntity = any;
 /** net.minecraft.resources.ResourceLocation */
 type ResourceLocation = any;
+/** net.minecraft.world.item.ItemStack */
+type ItemStack = any;
 
 interface AbstractShooterEvent {
     getEntity(): LivingEntity;
     getShooter(): LivingEntity;
     getGunId(): ResourceLocation;
+    getGunItem(): ItemStack;
 }
 
 interface LivingEntityShootEvent extends AbstractShooterEvent {
