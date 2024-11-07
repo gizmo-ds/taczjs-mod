@@ -30,13 +30,13 @@ TaCZClientEvents.playerAim((event) => {
             // 如果正在跑步, 播放 run_start 动画
             event.runMovementAnimation(
                 "run_start",
-                AnimationPlayType.PLAY_ONCE_HOLD,
+                TaCZJSUtils.AnimationPlayType.PLAY_ONCE_HOLD,
                 0.5
             );
         } else if (am.isPlayingIdleAnimation() || am.isPlayingWalkAnimation()) {
             // 如果正在站立或者走路, 播放武器检视动画
-            SoundPlayManager.stopPlayGunSound();
-            SoundPlayManager.playInspectSound(event.getPlayer(), gunIndex, false);
+            TaCZJSUtils.SoundPlayManager.stopPlayGunSound();
+            TaCZJSUtils.SoundPlayManager.playInspectSound(event.getPlayer(), gunIndex, false);
             am.onGunInspect();
         }
     }

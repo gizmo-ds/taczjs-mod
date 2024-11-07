@@ -1,3 +1,5 @@
+import TaCZJSUtils from "./TaCZJSUtils"
+
 declare class TaCZClientEvents {
     static gunIndexLoad(event: ClientGunIndexLoadEvent);
     static playerAim(event: LocalPlayerAimEvent);
@@ -5,15 +7,6 @@ declare class TaCZClientEvents {
     static playerMelee(event: LocalPlayerMeleeEvent);
     static playerReload(event: LocalPlayerReloadEvent);
 }
-
-declare enum AnimationPlayType {
-    PLAY_ONCE_HOLD,
-    PLAY_ONCE_STOP,
-    LOOP,
-}
-
-/** com.tacz.guns.client.sound.SoundPlayManager */
-declare class SoundPlayManager {}
 
 /** net.minecraft.resources.ResourceLocation */
 type ResourceLocation = any;
@@ -33,8 +26,8 @@ interface AbstractClientGunEvent {
     setVanillaInteract(v: boolean): void;
     isVanillaInteract(): boolean;
     getGunOperator(): IClientPlayerGunOperator;
-    runMovementAnimation(animationName: string, type: AnimationPlayType, transitionTimeS: float);
-    runMaimAnimation(animationName: string, type: AnimationPlayType, transitionTimeS: float);
+    runMovementAnimation(animationName: string, type: TaCZJSUtils.AnimationPlayType, transitionTimeS: float);
+    runMaimAnimation(animationName: string, type: TaCZJSUtils.AnimationPlayType, transitionTimeS: float);
     getBlockHitResult(): BlockHitResult;
     getEntityHitResult(): EntityHitResult;
     canInteractEntity(): boolean;

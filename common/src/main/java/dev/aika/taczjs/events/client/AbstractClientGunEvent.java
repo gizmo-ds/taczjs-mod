@@ -5,6 +5,7 @@ import com.tacz.guns.api.client.gameplay.IClientPlayerGunOperator;
 import com.tacz.guns.client.animation.statemachine.GunAnimationStateMachine;
 import com.tacz.guns.client.resource.index.ClientGunIndex;
 import com.tacz.guns.config.util.InteractKeyConfigRead;
+import dev.aika.taczjs.TaCZJSUtils;
 import dev.aika.taczjs.interfaces.IClientGun;
 import dev.latvian.mods.kubejs.client.ClientEventJS;
 import dev.latvian.mods.rhino.util.HideFromJS;
@@ -60,13 +61,7 @@ public abstract class AbstractClientGunEvent extends ClientEventJS {
         return IClientPlayerGunOperator.fromLocalPlayer(this.getPlayer());
     }
 
-    public enum AnimationPlayType {
-        PLAY_ONCE_HOLD,
-        PLAY_ONCE_STOP,
-        LOOP;
-    }
-
-    private ObjectAnimation.PlayType getPlayType(AnimationPlayType type) {
+    private ObjectAnimation.PlayType getPlayType(TaCZJSUtils.AnimationPlayType type) {
         return switch (type) {
             case PLAY_ONCE_HOLD -> ObjectAnimation.PlayType.PLAY_ONCE_HOLD;
             case PLAY_ONCE_STOP -> ObjectAnimation.PlayType.PLAY_ONCE_STOP;
@@ -74,23 +69,23 @@ public abstract class AbstractClientGunEvent extends ClientEventJS {
         };
     }
 
-    public void runMovementAnimation(String animationName, AnimationPlayType type, float transitionTimeS) {
+    public void runMovementAnimation(String animationName, TaCZJSUtils.AnimationPlayType type, float transitionTimeS) {
         var animationStateMachine = getGunIndex().getAnimationStateMachine();
         if (animationStateMachine == null) return;
         animationStateMachine.getController().runAnimation(
                 GunAnimationStateMachine.MOVEMENT_TRACK,
                 animationName,
-                getPlayType(type),
+                type.getPlayType(),
                 transitionTimeS);
     }
 
-    public void runMaimAnimation(String animationName, AnimationPlayType type, float transitionTimeS) {
+    public void runMaimAnimation(String animationName, TaCZJSUtils.AnimationPlayType type, float transitionTimeS) {
         var animationStateMachine = getGunIndex().getAnimationStateMachine();
         if (animationStateMachine == null) return;
         animationStateMachine.getController().runAnimation(
                 GunAnimationStateMachine.MAIN_TRACK,
                 animationName,
-                getPlayType(type),
+                type.getPlayType(),
                 transitionTimeS);
     }
 
