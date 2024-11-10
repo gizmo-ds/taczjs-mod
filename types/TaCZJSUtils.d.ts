@@ -1,6 +1,11 @@
 declare class TaCZJSUtils {
+    /** client only */
     static AnimationPlayType: typeof AnimationPlayType;
+    /** client only */
     static SoundPlayManager: SoundPlayManager;
+    /** client only */
+    static openRefitScreen(): void;
+    static mainHandHoldGun(livingEntity: LivingEntity): boolean;
     static getGunIndex(gunId: ResourceLocation): CommonGunIndex;
     static getAmmoIndex(ammoId: ResourceLocation): CommonAmmoIndex;
     static getAttachmentIndex(attachmentId: ResourceLocation): CommonAttachmentIndex;
@@ -15,6 +20,8 @@ enum AnimationPlayType {
 
 /** net.minecraft.resources.ResourceLocation */
 type ResourceLocation = any;
+/** net.minecraft.world.entity.LivingEntity */
+type LivingEntity = any;
 /** com.tacz.guns.client.sound.SoundPlayManager */
 type SoundPlayManager = any;
 /** com.tacz.guns.resource.index.CommonGunIndex */
