@@ -1,4 +1,4 @@
-package dev.aika.taczjs.fabric.mixin.client;
+package dev.aika.taczjs.forge.mixin.client;
 
 import com.tacz.guns.api.TimelessAPI;
 import com.tacz.guns.api.item.IAttachment;
@@ -6,10 +6,10 @@ import com.tacz.guns.api.item.attachment.AttachmentType;
 import com.tacz.guns.api.item.builder.AttachmentItemBuilder;
 import com.tacz.guns.init.ModItems;
 import com.tacz.guns.resource.CommonGunPackLoader;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Objects;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 @Mixin(value = AttachmentItemBuilder.class, remap = false)
 public abstract class AttachmentItemBuilderMixin {
     @Shadow
@@ -53,8 +53,8 @@ public abstract class AttachmentItemBuilderMixin {
     @Unique
     private ItemStack taczjs$creativeTabsAttachmentItem(AttachmentType type) {
         var firstAttachment = CommonGunPackLoader.getAllAttachments().stream().filter(x -> Objects.equals(x.getValue().getType(), type)).findFirst().orElse(null);
-        if (firstAttachment == null) return ModItems.GUN_SMITH_TABLE.getDefaultInstance();
-        var attachment = new ItemStack(ModItems.ATTACHMENT, 1);
+        if (firstAttachment == null) return ModItems.GUN_SMITH_TABLE.get().getDefaultInstance();
+        var attachment = new ItemStack(ModItems.ATTACHMENT.get(), 1);
         if (attachment.getItem() instanceof IAttachment iAttachment)
             iAttachment.setAttachmentId(attachment, firstAttachment.getKey());
         return attachment;

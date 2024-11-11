@@ -25,31 +25,29 @@ public abstract class GunItemBuilderMixin {
     @Inject(method = "build", at = @At("HEAD"), cancellable = true)
     public void build(CallbackInfoReturnable<ItemStack> cir) {
         var st = Thread.currentThread().getStackTrace();
-        if (st.length >= 4) {
-            if (st[3].getClassName().equals("com.tacz.guns.init.ModCreativeTabs")) {
-                if (TimelessAPI.getCommonGunIndex(this.gunId).isEmpty()) {
-                    switch (this.gunId.toString()) {
-                        case "tacz:glock_17":
-                            cir.setReturnValue(taczjs$creativeTabsGunItem("pistol"));
-                            return;
-                        case "tacz:ai_awp":
-                            cir.setReturnValue(taczjs$creativeTabsGunItem("sniper"));
-                            return;
-                        case "tacz:ak47":
-                            cir.setReturnValue(taczjs$creativeTabsGunItem("rifle"));
-                            return;
-                        case "tacz:db_short":
-                            cir.setReturnValue(taczjs$creativeTabsGunItem("shotgun"));
-                            return;
-                        case "tacz:hk_mp5a5":
-                            cir.setReturnValue(taczjs$creativeTabsGunItem("smg"));
-                            return;
-                        case "tacz:rpg7":
-                            cir.setReturnValue(taczjs$creativeTabsGunItem("rpg"));
-                            return;
-                        case "tacz:m249":
-                            cir.setReturnValue(taczjs$creativeTabsGunItem("mg"));
-                    }
+        if (st.length >= 4 && st[3].getClassName().equals("com.tacz.guns.init.ModCreativeTabs")) {
+            if (TimelessAPI.getCommonGunIndex(this.gunId).isEmpty()) {
+                switch (this.gunId.toString()) {
+                    case "tacz:glock_17":
+                        cir.setReturnValue(taczjs$creativeTabsGunItem("pistol"));
+                        return;
+                    case "tacz:ai_awp":
+                        cir.setReturnValue(taczjs$creativeTabsGunItem("sniper"));
+                        return;
+                    case "tacz:ak47":
+                        cir.setReturnValue(taczjs$creativeTabsGunItem("rifle"));
+                        return;
+                    case "tacz:db_short":
+                        cir.setReturnValue(taczjs$creativeTabsGunItem("shotgun"));
+                        return;
+                    case "tacz:hk_mp5a5":
+                        cir.setReturnValue(taczjs$creativeTabsGunItem("smg"));
+                        return;
+                    case "tacz:rpg7":
+                        cir.setReturnValue(taczjs$creativeTabsGunItem("rpg"));
+                        return;
+                    case "tacz:m249":
+                        cir.setReturnValue(taczjs$creativeTabsGunItem("mg"));
                 }
             }
         }
