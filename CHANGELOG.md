@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v1.2.1+mc1.20.1 - 2024-11-11
+
 ### Added
 
 - Added `TaCZJSUtils.openRefitScreen` and `TaCZJSUtils.mainHandHoldGun` functions.

@@ -4,12 +4,12 @@
 
 This mod was created to support my own modpack, with only the features I use and find useful.
 
-For usage examples, please refer to the [`example`](https://github.com/gizmo-ds/taczjs-mod/tree/v1.2.0+mc1.20.1/example)
+For usage examples, please refer to the [`example`](https://github.com/gizmo-ds/taczjs-mod/tree/v1.2.1+mc1.20.1/example)
 directory in this repository. This directory contains sample code and demonstrations to help you get started with the
 mod.
 
 You can also view the typescript type declaration file in
-the [types](https://github.com/gizmo-ds/taczjs-mod/tree/v1.2.0+mc1.20.1/types) directory.
+the [types](https://github.com/gizmo-ds/taczjs-mod/tree/v1.2.1+mc1.20.1/types) directory.
 
 ## License
 
