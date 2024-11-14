@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+- TaCZStartupEvents: Added a `getStdJson` method to AbstractLoadEvent, enabling the retrieval of JavaScript-compatible
+  standard JSON. The `getJson` method remains available for non-standard JSON formats.
+
 ## v1.2.1+mc1.20.1 - 2024-11-11
 
 ### Added

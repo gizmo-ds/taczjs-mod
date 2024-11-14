@@ -1,5 +1,6 @@
 package dev.aika.taczjs.events;
 
+import com.tacz.guns.resource.CommonGunPackLoader;
 import dev.latvian.mods.kubejs.event.EventJS;
 import dev.latvian.mods.kubejs.typings.Info;
 import dev.latvian.mods.rhino.util.HideFromJS;
@@ -23,6 +24,11 @@ public abstract class AbstractLoadEvent extends EventJS {
     @Info("The returned data may not conform to standard JSON format.")
     public String getJson() {
         return json;
+    }
+
+    @Info("Get the JSON data in standard format.")
+    public String getStdJson() {
+        return CommonGunPackLoader.GSON.toJson(CommonGunPackLoader.GSON.fromJson(json, Object.class));
     }
 
     public void setJson(String json) {

@@ -30,6 +30,7 @@ type AttachmentIndexPOJO = any;
 interface AbstractLoadEvent {
     getId(): ResourceLocation;
     getJson(): string;
+    getStdJson(): string;
     setJson(json: string): void;
 }
 interface RecipeLoadEvent extends AbstractLoadEvent {
