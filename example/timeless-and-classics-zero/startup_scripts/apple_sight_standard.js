@@ -3,7 +3,7 @@
 
 TaCZStartupEvents.recipeLoad((event) => {
     if (event.getId().toString() === "create_armorer:attachments/sight_standard") {
-        const json = JSON.parse(event.getJson());
+        const json = JSON.parse(event.getStdJson());
         json.materials = [
             {
                 item: { item: "minecraft:apple" },
