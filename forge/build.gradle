@@ -58,7 +58,7 @@ processResources {
     filesMatching('META-INF/mods.toml') {
         expand version: project.version
     }
-    from(rootProject.file("assets/icon.png")) {
+    from(rootProject.file("assets/icon-128x128.png")) {
         rename { "$rootProject.archives_name-icon.png" }
     }
 }

@@ -41,7 +41,7 @@ processResources {
         expand version: project.version
     }
     from(rootProject.file("assets/icon.png")) {
-        rename { "assets/$rootProject.archives_name/icon.png" }
+        rename { "assets/$rootProject.archives_name/icon-128x128.png" }
     }
 }
 
