@@ -35,6 +35,7 @@ interface AbstractClientGunEvent {
 
 interface ClientGunIndexLoadEvent extends AbstractClientGunEvent {}
 interface LocalPlayerAimEvent extends AbstractClientGunEvent {
+    isAim(): boolean;
     cancelAim(): void;
 }
 interface LocalPlayerShootEvent extends AbstractClientGunEvent {
