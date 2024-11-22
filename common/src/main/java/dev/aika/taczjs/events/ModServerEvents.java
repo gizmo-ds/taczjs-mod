@@ -1,5 +1,6 @@
 package dev.aika.taczjs.events;
 
+import dev.aika.taczjs.events.asset.RecipeLoadBeginEvent;
 import dev.aika.taczjs.events.shooter.LivingEntityAimEvent;
 import dev.aika.taczjs.events.shooter.LivingEntityMeleeEvent;
 import dev.aika.taczjs.events.shooter.LivingEntityReloadEvent;
@@ -14,4 +15,6 @@ public interface ModServerEvents {
     EventHandler ENTITY_AIM_REGISTER = GROUP.server("entityAim", () -> LivingEntityAimEvent.class);
     EventHandler ENTITY_MELEE_REGISTER = GROUP.server("entityMelee", () -> LivingEntityMeleeEvent.class);
     EventHandler ENTITY_RELOAD_REGISTER = GROUP.server("entityReload", () -> LivingEntityReloadEvent.class);
+
+    EventHandler RECIPES_REGISTER = GROUP.server("recipes", () -> RecipeLoadBeginEvent.class);
 }

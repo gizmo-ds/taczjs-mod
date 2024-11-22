@@ -5,6 +5,7 @@ import com.tacz.guns.resource.CommonAssetManager;
 import com.tacz.guns.resource.loader.asset.RecipeLoader;
 import com.tacz.guns.resource.network.CommonGunPackNetwork;
 import com.tacz.guns.resource.network.DataType;
+import dev.aika.taczjs.events.ModServerEvents;
 import dev.aika.taczjs.events.ModStartupEvents;
 import dev.aika.taczjs.events.asset.RecipeLoadBeginEvent;
 import dev.aika.taczjs.events.asset.RecipeLoadEndEvent;
@@ -39,12 +40,16 @@ public abstract class RecipeLoaderMixin {
 
     @Inject(method = "load(Ljava/util/zip/ZipFile;Ljava/lang/String;)Z", at = @At("HEAD"))
     private static void loadHead(ZipFile zipFile, String zipPath, CallbackInfoReturnable<Boolean> cir) {
-        ModStartupEvents.RECIPE_LOAD_BEGIN_REGISTER.post(new RecipeLoadBeginEvent());
+        var event = new RecipeLoadBeginEvent();
+        ModServerEvents.RECIPES_REGISTER.post(event);
+        ModStartupEvents.RECIPE_LOAD_BEGIN_REGISTER.post(event);
     }
 
     @Inject(method = "load(Ljava/io/File;)V", at = @At("HEAD"))
     private static void loadHead(File root, CallbackInfo ci) {
-        ModStartupEvents.RECIPE_LOAD_BEGIN_REGISTER.post(new RecipeLoadBeginEvent());
+        var event = new RecipeLoadBeginEvent();
+        ModServerEvents.RECIPES_REGISTER.post(event);
+        ModStartupEvents.RECIPE_LOAD_BEGIN_REGISTER.post(event);
     }
 
     @Inject(method = "load(Ljava/util/zip/ZipFile;Ljava/lang/String;)Z", at = @At("RETURN"))

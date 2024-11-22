@@ -26,6 +26,8 @@ type GunIndexPOJO = any;
 type AmmoIndexPOJO = any;
 /** com.tacz.guns.resource.pojo.AttachmentIndexPOJO */
 type AttachmentIndexPOJO = any;
+// https://kubejs.com/wiki/tutorials/recipes#removing-recipes
+type RecipeFilter = any;
 
 interface AbstractLoadEvent {
     getId(): ResourceLocation;
@@ -41,7 +43,10 @@ interface RecipeLoadEndEvent {
     removeAllRecipes(): void;
     addRecipe(id: ResourceLocation, json: string): void;
 }
-interface RecipeLoadBeginEvent extends RecipeLoadEndEvent {}
+interface RecipeLoadBeginEvent {
+    remove(filter: RecipeFilter): void;
+    addRecipe(id: ResourceLocation, json: string): void;
+}
 interface GunDataLoadEvent extends AbstractLoadEvent {
     getGunData(): GunData;
     removeGunData(): void;
