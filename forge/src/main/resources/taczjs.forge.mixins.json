@@ -16,7 +16,11 @@
   ],
   "mixins": [
     "crafting.RecipeManagerMixin",
-    "resource.manager.CommonDataManagerMixin"
+    "resource.manager.CommonDataManagerMixin",
+    "shooter.LivingEntityAimMixin",
+    "shooter.LivingEntityMeleeMixin",
+    "shooter.LivingEntityReloadMixin",
+    "shooter.LivingEntityShootMixin"
   ],
   "injectors": {
     "defaultRequire": 1

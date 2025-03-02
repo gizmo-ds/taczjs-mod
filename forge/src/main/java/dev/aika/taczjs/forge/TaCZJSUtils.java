@@ -4,7 +4,7 @@ import com.tacz.guns.api.TimelessAPI;
 import com.tacz.guns.api.client.animation.ObjectAnimation;
 import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.client.gui.GunRefitScreen;
-import com.tacz.guns.crafting.GunSmithTableRecipe;
+import com.tacz.guns.client.resource.GunDisplayInstance;
 import com.tacz.guns.resource.index.CommonAmmoIndex;
 import com.tacz.guns.resource.index.CommonAttachmentIndex;
 import com.tacz.guns.resource.index.CommonGunIndex;
@@ -18,7 +18,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import java.nio.file.Path;
 import java.util.Optional;
 
 @SuppressWarnings("unused")
@@ -71,6 +70,13 @@ public class TaCZJSUtils {
         var gunIndex = TimelessAPI.getClientGunIndex(gunId).orElse(null);
         if (gunIndex instanceof IClientGun) return Optional.of((IClientGun) gunIndex);
         return Optional.empty();
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static GunDisplayInstance getGunDisplay() {
+        var player = Minecraft.getInstance().player;
+        if (player == null || player.isSpectator()) return null;
+        return TimelessAPI.getGunDisplay(player.getMainHandItem()).orElse(null);
     }
 
     public static boolean mainHandHoldGun(LivingEntity livingEntity) {

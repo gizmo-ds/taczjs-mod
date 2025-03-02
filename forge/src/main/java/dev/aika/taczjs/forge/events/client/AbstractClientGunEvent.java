@@ -87,7 +87,4 @@ public abstract class AbstractClientGunEvent extends ClientEventJS {
             return InteractKeyConfigRead.canInteractBlock(this.getLevel().getBlockState(result.getBlockPos()));
         return false;
     }
-
-    public static class Animation {
-    }
 }
