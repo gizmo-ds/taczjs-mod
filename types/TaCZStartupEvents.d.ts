@@ -1,15 +1,15 @@
 declare class TaCZStartupEvents {
-    static recipeLoad(event: RecipeLoadEvent);
     static recipeLoadBegin(event: RecipeLoadBeginEvent);
+    static recipeLoad(event: RecipeLoadEvent);
     static recipeLoadEnd(event: RecipeLoadEndEvent);
-
-    static gunDataLoad(event: GunDataLoadEvent);
-    static attachmentDataLoad(event: AttachmentDataLoadEvent);
-    static attachmentTagsLoad(event: AttachmentTagsLoadEvent);
 
     static gunIndexLoad(event: GunIndexLoadEvent);
     static ammoIndexLoad(event: AmmoIndexLoadEvent);
     static attachmentIndexLoad(event: AttachmentIndexLoadEvent);
+
+    static gunDataLoad(event: GunDataLoadEvent);
+    static attachmentDataLoad(event: AttachmentDataLoadEvent);
+    static attachmentTagsLoad(event: AttachmentTagsLoadEvent);
 }
 
 /** net.minecraft.resources.ResourceLocation */
@@ -26,8 +26,6 @@ type GunIndexPOJO = any;
 type AmmoIndexPOJO = any;
 /** com.tacz.guns.resource.pojo.AttachmentIndexPOJO */
 type AttachmentIndexPOJO = any;
-// https://kubejs.com/wiki/tutorials/recipes#removing-recipes
-type RecipeFilter = any;
 
 interface AbstractLoadEvent {
     getId(): ResourceLocation;
@@ -39,14 +37,12 @@ interface RecipeLoadEvent extends AbstractLoadEvent {
     getTableRecipe(): TableRecipe;
     removeRecipe(): void;
 }
-interface RecipeLoadEndEvent {
-    removeAllRecipes(): void;
-    addRecipe(id: ResourceLocation, json: string): void;
-}
 interface RecipeLoadBeginEvent {
-    remove(filter: RecipeFilter): void;
+    removeAllRecipes(): void;
+    putRecipe(id: ResourceLocation, json: string): void;
     addRecipe(id: ResourceLocation, json: string): void;
 }
+interface RecipeLoadEndEvent extends RecipeLoadBeginEvent {}
 interface GunDataLoadEvent extends AbstractLoadEvent {
     getGunData(): GunData;
     removeGunData(): void;
