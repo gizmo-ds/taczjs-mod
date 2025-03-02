@@ -6,11 +6,13 @@
   "client": [
     "client.ClientGunIndexMixin",
     "client.ClientIndexManagerMixin",
+    "client.ClientPreventGunClickMixin",
     "client.InteractKeyTextOverlayMixin",
     "client.LocalPlayerAimMixin",
     "client.LocalPlayerMeleeMixin",
     "client.LocalPlayerReloadMixin",
-    "client.LocalPlayerShootMixin"
+    "client.LocalPlayerShootMixin",
+    "client.ReloadableResourceManagerMixin"
   ],
   "mixins": [
     "crafting.RecipeManagerMixin",

@@ -56,9 +56,6 @@ public class TaCZJSHelper {
                 ModStartupEvents.ATTACHMENT_TAGS_LOAD_REGISTER.post(event);
                 return event;
             }
-            case ALLOW_ATTACHMENT_TAGS: {
-                return null;
-            }
             default:
                 return null;
         }
