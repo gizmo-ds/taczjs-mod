@@ -47,7 +47,7 @@ public abstract class RecipeManagerMixin {
             var event = new RecipeLoadEvent(entry.getKey(), json);
             ModStartupEvents.RECIPE_LOAD_REGISTER.post(event);
             if (event.isRemove()) removes.add(entry.getKey());
-            if (event.isModified()) modified.put(entry.getKey(), TaCZJSHelper.toJsonObject(event.getJson()));
+            if (event.isModified()) modified.put(entry.getKey(), event.getJsonElement());
         }
 
         removes.forEach(object::remove);

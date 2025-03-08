@@ -1,7 +1,9 @@
 package dev.aika.taczjs.forge.events.crafting.legacy;
 
+import com.google.gson.JsonElement;
 import com.tacz.guns.resource.CommonAssetsManager;
 import com.tacz.guns.resource.pojo.data.recipe.TableRecipe;
+import dev.aika.taczjs.forge.TaCZJSHelper;
 import dev.aika.taczjs.forge.events.crafting.AbstractRecipeEvent;
 import dev.latvian.mods.kubejs.typings.Info;
 import dev.latvian.mods.rhino.util.HideFromJS;
@@ -44,5 +46,10 @@ public class RecipeLoadEvent extends AbstractRecipeEvent {
     @HideFromJS
     public Boolean isModified() {
         return this.modified;
+    }
+
+    @HideFromJS
+    public JsonElement getJsonElement() {
+        return TaCZJSHelper.toJsonObject(this.json);
     }
 }

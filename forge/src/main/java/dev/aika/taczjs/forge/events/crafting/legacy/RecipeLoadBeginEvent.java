@@ -1,11 +1,11 @@
 package dev.aika.taczjs.forge.events.crafting.legacy;
 
 import com.google.gson.JsonElement;
+import dev.aika.taczjs.forge.TaCZJSHelper;
 import dev.latvian.mods.kubejs.event.EventJS;
 import dev.latvian.mods.kubejs.typings.Info;
 import dev.latvian.mods.rhino.util.HideFromJS;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class RecipeLoadBeginEvent extends EventJS {
     }
 
     public void putRecipe(ResourceLocation id, String json) {
-        this.putRecipes.put(id, GsonHelper.parse(json, true));
+        this.putRecipes.put(id, TaCZJSHelper.toJsonObject(json));
     }
 
     @Info("@deprecated This is an alias for `event.putRecipe`. Please use `event.putRecipe` instead.")
