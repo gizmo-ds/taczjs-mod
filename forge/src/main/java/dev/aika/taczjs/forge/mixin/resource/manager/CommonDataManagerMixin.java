@@ -26,7 +26,7 @@ public abstract class CommonDataManagerMixin {
 
     @Inject(method = "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V", at = @At("HEAD"))
     private void onApply(Map<ResourceLocation, JsonElement> pObject, ResourceManager pResourceManager, ProfilerFiller pProfiler, CallbackInfo ci) {
-        TaCZJS.LOGGER.info("CommonDataManager::onApply: {}", this.type);
+        TaCZJS.LOGGER.debug("CommonDataManager::onApply: {}", this.type);
         ArrayList<ResourceLocation> removes = new ArrayList<>();
         Map<ResourceLocation, String> modified = new HashMap<>();
         if (EnumSet.of(
