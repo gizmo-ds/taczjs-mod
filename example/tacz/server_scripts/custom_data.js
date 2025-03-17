@@ -7,6 +7,17 @@ TaCZServerEvents.gunDataLoad((event) => {
         json.ammo_amount = 123;
         return event.setJson(JSON.stringify(json));
     }
+    // 修改 黄金沙漠之鹰 的伤害为 999
+    if (id === "tacz:deagle_golden_data") {
+        const json = JSON.parse(event.getStdJson());
+        json.bullet.extra_damage.damage_adjust = [
+            { distance: 18, damage: 999 },
+            { distance: 36, damage: 999 },
+            { distance: 55, damage: 999 },
+            { distance: "infinite", damage: 999 },
+        ];
+        return event.setJson(JSON.stringify(json));
+    }
 })
 
 // 与 `TaCZStartupEvents.attachmentDataLoad` 功能一致, 但优先级更高
