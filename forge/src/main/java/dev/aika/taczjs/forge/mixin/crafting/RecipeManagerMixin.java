@@ -41,13 +41,15 @@ public abstract class RecipeManagerMixin {
 
         // RecipeLoadEvent
         for (Map.Entry<ResourceLocation, JsonElement> entry : object.entrySet()) {
+            var key = entry.getKey();
+            if (key.getPath().startsWith("_")) continue;
             var recipeType = GsonHelper.getAsString(GsonHelper.convertToJsonObject(entry.getValue(), "top element"), "type");
             if (!recipeType.equals(TaCZJSHelper.GunSmithTableRecipeType)) continue;
             var json = GsonHelper.toStableString(entry.getValue());
-            var event = new RecipeLoadEvent(entry.getKey(), json);
+            var event = new RecipeLoadEvent(key, json);
             ModStartupEvents.RECIPE_LOAD_REGISTER.post(event);
-            if (event.isRemove()) removes.add(entry.getKey());
-            if (event.isModified()) modified.put(entry.getKey(), event.getJsonElement());
+            if (event.isRemove()) removes.add(key);
+            if (event.isModified()) modified.put(key, event.getJsonElement());
         }
 
         removes.forEach(object::remove);
