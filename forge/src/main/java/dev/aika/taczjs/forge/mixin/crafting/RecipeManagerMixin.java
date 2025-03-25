@@ -1,6 +1,7 @@
 package dev.aika.taczjs.forge.mixin.crafting;
 
 import com.google.gson.JsonElement;
+import dev.aika.taczjs.TaCZJS;
 import dev.aika.taczjs.forge.TaCZJSHelper;
 import dev.aika.taczjs.forge.events.ModStartupEvents;
 import dev.aika.taczjs.forge.events.crafting.legacy.RecipeLoadBeginEvent;
@@ -41,15 +42,22 @@ public abstract class RecipeManagerMixin {
 
         // RecipeLoadEvent
         for (Map.Entry<ResourceLocation, JsonElement> entry : object.entrySet()) {
-            var key = entry.getKey();
-            if (key.getPath().startsWith("_")) continue;
-            var recipeType = GsonHelper.getAsString(GsonHelper.convertToJsonObject(entry.getValue(), "top element"), "type");
-            if (!recipeType.equals(TaCZJSHelper.GunSmithTableRecipeType)) continue;
-            var json = GsonHelper.toStableString(entry.getValue());
-            var event = new RecipeLoadEvent(key, json);
+            ResourceLocation recipeId = entry.getKey();
+            JsonElement value = entry.getValue();
+            try {
+                if (!value.isJsonObject()) continue;
+                var obj = value.getAsJsonObject();
+                if (!obj.has("type")) continue;
+                if (!obj.get("type").getAsString().equals(TaCZJSHelper.GunSmithTableRecipeType)) continue;
+            } catch (Exception ex) {
+                TaCZJS.LOGGER.warn("Failed to load recipe {}", entry.getKey(), ex);
+                continue;
+            }
+            var jsonStr = GsonHelper.toStableString(value);
+            var event = new RecipeLoadEvent(recipeId, jsonStr);
             ModStartupEvents.RECIPE_LOAD_REGISTER.post(event);
-            if (event.isRemove()) removes.add(key);
-            if (event.isModified()) modified.put(key, event.getJsonElement());
+            if (event.isRemove()) removes.add(recipeId);
+            if (event.isModified()) modified.put(recipeId, event.getJsonElement());
         }
 
         removes.forEach(object::remove);
