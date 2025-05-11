@@ -80,7 +80,7 @@ public class TaCZJSUtils {
     }
 
     public static boolean mainHandHoldGun(LivingEntity livingEntity) {
-        return IGun.mainhandHoldGun(livingEntity);
+        return livingEntity.getMainHandItem().getItem() instanceof IGun;
     }
 
     public static CommonGunIndex getGunIndex(ResourceLocation gunId) {
