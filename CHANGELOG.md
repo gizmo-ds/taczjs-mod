@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## v1.3.7+mc1.20.1 - 2025-12-02
+
+- Added TaCZ 1.1.7 support
 
 ## v1.2.2+mc1.20.1 - 2024-11-14
 
