@@ -45,6 +45,14 @@ subprojects {
         }
         // Dev dependencies
         maven { url = "https://maven.blamejared.com/" } // JEI
+        maven {// CCA
+            name = "Ladysnake Mods"
+            url = 'https://maven.ladysnake.org/releases'
+        }
+        maven {// Forge Config API Port
+            name = "Fuzs Mod Resources"
+            url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+        }
     }
 
     dependencies {

@@ -11,3 +11,4 @@ rootProject.name = 'taczjs'
 
 include 'common'
 include 'forge'
+include 'fabric'
