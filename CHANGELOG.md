@@ -1,5 +1,7 @@
 ### Unreleased
 
+- Added [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated) support
+
 ### v1.3.7+mc1.20.1 - 2025-12-02
 
 - Added TaCZ 1.1.7 support
