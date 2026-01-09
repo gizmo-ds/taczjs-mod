@@ -11,7 +11,7 @@ authors = "Gizmo"
 description = '''
 KubeJS TaCZ integration
 '''
-logoFile = "taczjs-icon.png"
+logoFile = "taczjs_logo.png"
 
 [[dependencies.taczjs]]
 modId = "forge"

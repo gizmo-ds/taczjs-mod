@@ -1,27 +1,27 @@
-# Changelog
+### Unreleased
 
-## v1.3.7+mc1.20.1 - 2025-12-02
+### v1.3.7+mc1.20.1 - 2025-12-02
 
 - Added TaCZ 1.1.7 support
 
-## v1.2.2+mc1.20.1 - 2024-11-14
+### v1.2.2+mc1.20.1 - 2024-11-14
 
-### Added
+Added
 
 - TaCZStartupEvents: Added a `getStdJson` method to AbstractLoadEvent, enabling the retrieval of JavaScript-compatible
   standard JSON. The `getJson` method remains available for non-standard JSON formats.
 
-### Changed
+Changed
 
 - Build Process: Updated to use a compressed icon for output, reducing file size and optimizing resource usage.
 
-## v1.2.1+mc1.20.1 - 2024-11-11
+### v1.2.1+mc1.20.1 - 2024-11-11
 
-### Added
+Added
 
 - Added `TaCZJSUtils.openRefitScreen` and `TaCZJSUtils.mainHandHoldGun` functions.
 
-### Fixed
+Fixed
 
 - Prevented a crash when attempting to retrieve an icon for a non-existent
   item. [#2](https://github.com/gizmo-ds/taczjs-mod/issues/2)
