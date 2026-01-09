@@ -6,7 +6,7 @@ import com.tacz.guns.api.client.gameplay.IClientPlayerGunOperator;
 import com.tacz.guns.client.resource.index.ClientGunIndex;
 import com.tacz.guns.config.util.InteractKeyConfigRead;
 import dev.aika.taczjs.forge.TaCZJSUtils;
-import dev.aika.taczjs.forge.interfaces.client.IClientGun;
+import dev.aika.taczjs.interfaces.client.IClientGun;
 import dev.latvian.mods.kubejs.client.ClientEventJS;
 import dev.latvian.mods.rhino.util.HideFromJS;
 import net.minecraft.client.Minecraft;

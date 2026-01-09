@@ -3,7 +3,7 @@ package dev.aika.taczjs.fabric.mixin.client;
 import com.tacz.guns.api.TimelessAPI;
 import dev.aika.taczjs.fabric.events.ModClientEvents;
 import dev.aika.taczjs.fabric.events.client.ClientGunIndexLoadEvent;
-import dev.aika.taczjs.fabric.interfaces.client.IClientGun;
+import dev.aika.taczjs.interfaces.client.IClientGun;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.server.packs.PackResources;

@@ -3,7 +3,7 @@ package dev.aika.taczjs.forge.mixin.client;
 import com.tacz.guns.api.TimelessAPI;
 import dev.aika.taczjs.forge.events.ModClientEvents;
 import dev.aika.taczjs.forge.events.client.ClientGunIndexLoadEvent;
-import dev.aika.taczjs.forge.interfaces.client.IClientGun;
+import dev.aika.taczjs.interfaces.client.IClientGun;
 import net.minecraft.server.packs.PackResources;
 import net.minecraft.server.packs.resources.ReloadInstance;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;

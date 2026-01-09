@@ -1,7 +1,7 @@
 package dev.aika.taczjs.forge.mixin.client;
 
 import com.tacz.guns.client.resource.index.ClientGunIndex;
-import dev.aika.taczjs.forge.interfaces.client.IClientGun;
+import dev.aika.taczjs.interfaces.client.IClientGun;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.spongepowered.asm.mixin.Implements;

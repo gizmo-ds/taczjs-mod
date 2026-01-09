@@ -1,7 +1,7 @@
 package dev.aika.taczjs.fabric.mixin.client;
 
 import com.tacz.guns.client.resource.index.ClientGunIndex;
-import dev.aika.taczjs.fabric.interfaces.client.IClientGun;
+import dev.aika.taczjs.interfaces.client.IClientGun;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import org.spongepowered.asm.mixin.Implements;

@@ -1,4 +1,4 @@
-package dev.aika.taczjs.forge.interfaces.client;
+package dev.aika.taczjs.interfaces.client;
 
 @SuppressWarnings("unused")
 public interface IClientGun {

@@ -9,7 +9,7 @@ import com.tacz.guns.resource.index.CommonAmmoIndex;
 import com.tacz.guns.resource.index.CommonAttachmentIndex;
 import com.tacz.guns.resource.index.CommonGunIndex;
 import com.tacz.guns.util.InputExtraCheck;
-import dev.aika.taczjs.forge.interfaces.client.IClientGun;
+import dev.aika.taczjs.interfaces.client.IClientGun;
 import dev.latvian.mods.rhino.util.HideFromJS;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
