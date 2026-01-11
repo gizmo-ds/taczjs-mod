@@ -15,7 +15,7 @@ architectury { minecraft = mcVersion }
 
 allprojects {
     group = mod.group
-    version = "${mod.version}-$mcVersion"
+    version = "${mod.version}+mc$mcVersion"
 }
 
 subprojects {
