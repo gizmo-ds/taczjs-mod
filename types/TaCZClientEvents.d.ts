@@ -26,8 +26,6 @@ interface AbstractClientGunEvent {
     setVanillaInteract(v: boolean): void;
     isVanillaInteract(): boolean;
     getGunOperator(): IClientPlayerGunOperator;
-    runMovementAnimation(animationName: string, type: TaCZJSUtils.AnimationPlayType, transitionTimeS: float);
-    runMaimAnimation(animationName: string, type: TaCZJSUtils.AnimationPlayType, transitionTimeS: float);
     getBlockHitResult(): BlockHitResult;
     getEntityHitResult(): EntityHitResult;
     canInteractEntity(): boolean;

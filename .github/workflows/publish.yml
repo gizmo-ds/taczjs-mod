@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     tags:
-      - v*mc1.20.1
+      - v*mc1.21.1
 
 permissions:
   contents: write
@@ -14,10 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'temurin'
           cache: gradle
 
@@ -34,5 +34,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            forge/build/libs/*mc1.20.1.jar
-            fabric/build/libs/*mc1.20.1.jar
+            forge/build/libs/*mc1.21.1.jar
