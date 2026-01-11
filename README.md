@@ -4,7 +4,7 @@
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/1130998?logo=curseforge&label=Downloads)](https://www.curseforge.com/minecraft/mc-mods/tacz-js)
 ![GitHub License](https://img.shields.io/badge/GPL--3.0-x?label=License&color=%23f37f40)
 
-[KubeJS](https://github.com/KubeJS-Mods/KubeJS) [TaCZ](https://github.com/MCModderAnchor/TACZ) integration.
+[KubeJS](https://github.com/KubeJS-Mods/KubeJS) [\[UNOFFICIAL\] TaCZ NeoForge Port](https://www.curseforge.com/minecraft/mc-mods/tacz-1-21-1) integration.
 
 > [!IMPORTANT]  
 > This mod is not an official project of TaCZ. Please refrain from submitting issues or support requests related to this
@@ -12,12 +12,12 @@
 
 This mod was created to support my own modpack, with only the features I use and find useful.
 
-For usage examples, please refer to the [`example`](https://github.com/gizmo-ds/taczjs-mod/tree/v1.3.5+mc1.20.1/example)
+For usage examples, please refer to the [`example`](./example)
 directory in this repository. This directory contains sample code and demonstrations to help you get started with the
 mod. [More examples(Simplified Chinese) 更多例子(简体中文)](https://wiki.aika.dev/taczjs/examples/recipes.html)
 
 You can also view the typescript type declaration file in
-the [types](https://github.com/gizmo-ds/taczjs-mod/tree/v1.3.5+mc1.20.1/types) directory.
+the [types](./types) directory.
 
 ## License
 
