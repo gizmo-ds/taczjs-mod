@@ -69,13 +69,13 @@ subprojects {
     java {
         withSourcesJar()
 
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 
     tasks.withType<JavaCompile> {
         options.encoding = "UTF-8"
-        options.release.set(17)
+        options.release.set(21)
     }
     tasks.named("clean") {
         doLast { delete("logs") }
@@ -119,7 +119,7 @@ configure(mod.enabled_platforms.map { project(":$it") }) {
                 "version" to project.version,
             )
             filesMatching("fabric.mod.json") { expand(modProperties) }
-            filesMatching("META-INF/mods.toml") { expand(modProperties) }
+            filesMatching("META-INF/neoforge.mods.toml") { expand(modProperties) }
 
             if (privateBuild) {
                 from(rootProject.file("assets/private-logo.png")) { rename { "${mod.id}_logo.png" } }

@@ -1,6 +1,6 @@
 ### Unreleased
 
-- Added [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated) support [#20](https://github.com/gizmo-ds/taczjs-mod/pull/20)
+- Added [\[UNOFFICIAL\] TaCZ NeoForge Port](https://www.curseforge.com/minecraft/mc-mods/tacz-1-21-1) support
 
 ### v1.3.7+mc1.20.1 - 2025-12-02
 

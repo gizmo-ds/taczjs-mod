@@ -9,4 +9,4 @@ pluginManagement {
 
 rootProject.name = "taczjs"
 
-include("common", "fabric", "forge")
+include("common", "neoforge")

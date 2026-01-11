@@ -1,7 +1,6 @@
 # TaCZ JS
 
 [![爱发电](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fafdian.com%2Fapi%2Fuser%2Fget-profile%3Fuser_id%3D75e549844b5111ed8df552540025c377&query=%24.data.user.name&label=%E7%88%B1%E5%8F%91%E7%94%B5&color=%23946ce6)](https://afdian.com/a/gizmo)
-[![Modrinth Downloads](https://img.shields.io/modrinth/dt/pAcsgLW2?logo=modrinth&label=Downloads)](https://modrinth.com/mod/pAcsgLW2)
 [![CurseForge Downloads](https://img.shields.io/curseforge/dt/1130998?logo=curseforge&label=Downloads)](https://www.curseforge.com/minecraft/mc-mods/tacz-js)
 ![GitHub License](https://img.shields.io/badge/GPL--3.0-x?label=License&color=%23f37f40)
 

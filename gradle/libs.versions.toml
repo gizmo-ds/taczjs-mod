@@ -1,26 +1,17 @@
 [versions]
-minecraft = "1.20.1"
-parchment = "2023.09.03"
+minecraft = "1.21.1"
+parchment = "2024.11.17"
 # Dependencies
-forge = "1.20.1-47.3.11"
+neoforge = "21.1.213"
 fabric-loader = "0.17.2"
-fabric-api = "0.92.6+1.20.1"
-kubejs = "2001.6.5-build.20"
-forge-tacz = "7278003-sources-7280838"
-fabric-tacz-refabricated = "7408240-sources-7408244"
-forge-playeranimator = "4587214"
-fabric-playeranimator = "4587215"
-modmenu = "7.2.2"
-jei = "15.0.0.12"
+kubejs = "2101.7.2-build.348"
+neoforge-tacz = "7374584"
+neoforge-playeranimator = "4587214"
+jei = "19.25.1.334"
 mixinextras = "0.4.1"
-
-fabric-modern-keybinding = "4913784"
-fabric-cardinal-components-api = "5.2.3"
-fabric-forgeconfigapiport = "8.0.2"
 
 commons-math3 = "3.6.1"
 luaj = "3.0.8-figura"
-bcel = "6.6.1"
 
 [plugins]
 architectury = { id = "architectury-plugin", version = "3.4-SNAPSHOT" }
@@ -31,25 +22,13 @@ shadow = { id = "com.github.johnrengelman.shadow", version = "8.1.1" }
 commons-math3 = { module = "org.apache.commons:commons-math3", version.ref = "commons-math3" }
 luaj-core = { module = "com.github.FiguraMC.luaj:luaj-core", version.ref = "luaj" }
 luaj-jse = { module = "com.github.FiguraMC.luaj:luaj-jse", version.ref = "luaj" }
-bcel = { module = "org.apache.bcel:bcel", version.ref = "bcel" }
 mixinextras = { module = "io.github.llamalad7:mixinextras-common", version.ref = "mixinextras" }
-## Forge
-forge-forge = { module = "net.minecraftforge:forge", version.ref = "forge" }
-forge-mixinextras = { module = "io.github.llamalad7:mixinextras-forge", version.ref = "mixinextras" }
-forge-tacz = { module = "curse.maven:timeless-and-classics-zero-1028108", version.ref = "forge-tacz" }
-forge-kubejs = { module = "dev.latvian.mods:kubejs-forge", version.ref = "kubejs" }
-forge-jei = { module = "mezz.jei:jei-1.20.1-forge", version.ref = "jei" }
-forge-playeranimator = { module = "curse.maven:playeranimator-658587", version.ref = "forge-playeranimator" }
+## NeoForge
+neoforge-neoforge = { module = "net.neoforged:neoforge", version.ref = "neoforge" }
+neoforge-mixinextras = { module = "io.github.llamalad7:mixinextras-neoforge", version.ref = "mixinextras" }
+neoforge-tacz = { module = "curse.maven:tacz-1-21-1-1353462", version.ref = "neoforge-tacz" }
+neoforge-kubejs = { module = "dev.latvian.mods:kubejs-neoforge", version.ref = "kubejs" }
+neoforge-jei = { module = "mezz.jei:jei-1.21.1-neoforge", version.ref = "jei" }
+neoforge-playeranimator = { module = "curse.maven:playeranimator-658587", version.ref = "neoforge-playeranimator" }
 ## Fabric
 fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
-fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api" }
-fabric-mixinextras = { module = "io.github.llamalad7:mixinextras-fabric", version.ref = "mixinextras" }
-fabric-tacz-refabricated = { module = "curse.maven:tacz-refabricated-1334246", version.ref = "fabric-tacz-refabricated" }
-fabric-kubejs = { module = "dev.latvian.mods:kubejs-fabric", version.ref = "kubejs" }
-fabric-playeranimator = { module = "curse.maven:playeranimator-658587", version.ref = "fabric-playeranimator" }
-fabric-modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
-fabric-jei = { module = "mezz.jei:jei-1.20.1-fabric", version.ref = "jei" }
-fabric-modern-keybinding = { module = "curse.maven:modern-keybinding-fabric-695433", version.ref = "fabric-modern-keybinding" }
-fabric-cardinal-components-base = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-base", version.ref = "fabric-cardinal-components-api" }
-fabric-cardinal-components-entity = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-entity", version.ref = "fabric-cardinal-components-api" }
-fabric-forgeconfigapiport = { module = "fuzs.forgeconfigapiport:forgeconfigapiport-fabric", version.ref = "fabric-forgeconfigapiport" }
