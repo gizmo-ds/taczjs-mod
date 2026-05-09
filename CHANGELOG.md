@@ -1,4 +1,4 @@
-### Unreleased
+### v1.4.1+mc1.20.1 - 2026-05-09
 
 - Add mixins for [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated) 0.6+ [#21](https://github.com/gizmo-ds/taczjs-mod/issues/21)
 
