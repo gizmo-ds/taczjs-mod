@@ -1,6 +1,7 @@
 {
   "required": true,
   "package": "dev.aika.taczjs.fabric.mixin",
+  "plugin": "dev.aika.taczjs.fabric.mixin.ModMixinPlugin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "taczjs.refmap.json",
   "minVersion": "0.8",
@@ -16,7 +17,9 @@
     "client.LocalPlayerMeleeMixin",
     "client.LocalPlayerReloadMixin",
     "client.LocalPlayerShootMixin",
-    "client.ReloadableResourceManagerMixin"
+    "client.ReloadableResourceManagerMixin",
+    "client.v0_6.ClientIndexManagerMixin",
+    "client.v0_6.InteractKeyTextOverlayMixin"
   ],
   "mixins": [
     "crafting.RecipeManagerMixin",
@@ -24,7 +27,8 @@
     "shooter.LivingEntityAimMixin",
     "shooter.LivingEntityMeleeMixin",
     "shooter.LivingEntityReloadMixin",
-    "shooter.LivingEntityShootMixin"
+    "shooter.LivingEntityShootMixin",
+    "shooter.v0_6.LivingEntityShootMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -7,7 +7,6 @@ plugins {
 architectury { fabric() }
 
 loom {
-    accessWidenerPath = file("src/main/resources/taczjs.accesswidener")
     mixin {
         defaultRefmapName.set("taczjs.refmap.json")
     }
