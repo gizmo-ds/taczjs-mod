@@ -1,6 +1,7 @@
 {
   "required": true,
   "package": "dev.aika.taczjs.neoforge.mixin",
+  "plugin": "dev.aika.taczjs.neoforge.mixin.ModMixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
@@ -15,15 +16,18 @@
     "client.LocalPlayerMeleeMixin",
     "client.LocalPlayerReloadMixin",
     "client.LocalPlayerShootMixin",
-    "client.ReloadableResourceManagerMixin"
+    "client.ReloadableResourceManagerMixin",
+    "client.v118.ClientIndexManagerMixin"
   ],
   "mixins": [
+    "client.v118.InteractKeyTextOverlayMixin",
     "crafting.RecipeManagerMixin",
     "resource.manager.CommonDataManagerMixin",
     "shooter.LivingEntityAimMixin",
     "shooter.LivingEntityMeleeMixin",
     "shooter.LivingEntityReloadMixin",
-    "shooter.LivingEntityShootMixin"
+    "shooter.LivingEntityShootMixin",
+    "shooter.v118.LivingEntityShootMixin"
   ],
   "injectors": {
     "defaultRequire": 1
