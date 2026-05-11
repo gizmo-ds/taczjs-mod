@@ -1,4 +1,4 @@
-### Unreleased
+### v1.4.2+mc1.20.1 - 2026-05-12
 
 - Add mixins for TaCZ 1.1.8+ [#22](https://github.com/gizmo-ds/taczjs-mod/issues/22)
 
