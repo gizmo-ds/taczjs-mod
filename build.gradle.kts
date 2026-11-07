@@ -19,8 +19,8 @@ allprojects {
 }
 
 subprojects {
-    apply(plugin = "dev.architectury.loom")
-    apply(plugin = "architectury-plugin")
+    plugins.apply("dev.architectury.loom")
+    plugins.apply("architectury-plugin")
 
     base.archivesName.set("${mod.id}-${project.name}")
 
@@ -83,8 +83,8 @@ subprojects {
 }
 
 configure(mod.enabled_platforms.map { project(":$it") }) {
-    apply(plugin = "architectury-plugin")
-    apply(plugin = "dev.architectury.loom")
+    plugins.apply("dev.architectury.loom")
+    plugins.apply("architectury-plugin")
 
     val platformName = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
         .platform.map { it.displayName() }.get()
