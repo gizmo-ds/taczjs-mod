@@ -5,13 +5,15 @@ parchment = "2024.11.17"
 neoforge = "21.1.213"
 fabric-loader = "0.17.2"
 kubejs = "2101.7.2-build.348"
-neoforge-tacz = "8060596-sources-8060597"
-neoforge-playeranimator = "4587214"
+neoforge-tacz = "9454361-sources-9454571" # tacz-neoforge-1.21.1-1.2.0
 jei = "19.25.1.334"
 mixinextras = "0.4.1"
 
 commons-math3 = "3.6.1"
 luaj = "3.0.8-figura"
+simplebedrockmodel = "2.6.2-neoforge-mc1.21.1"
+mae = "1.1.4"
+tinyserver = "1.0.0-build.33"
 
 [plugins]
 architectury = { id = "architectury-plugin", version = "3.4-SNAPSHOT" }
@@ -22,13 +24,14 @@ shadow = { id = "com.github.johnrengelman.shadow", version = "8.1.1" }
 commons-math3 = { module = "org.apache.commons:commons-math3", version.ref = "commons-math3" }
 luaj-core = { module = "com.github.FiguraMC.luaj:luaj-core", version.ref = "luaj" }
 luaj-jse = { module = "com.github.FiguraMC.luaj:luaj-jse", version.ref = "luaj" }
+tinyserver = { module = "dev.latvian.apps:tiny-java-server", version.ref = "tinyserver" }
 mixinextras = { module = "io.github.llamalad7:mixinextras-common", version.ref = "mixinextras" }
 ## NeoForge
 neoforge-neoforge = { module = "net.neoforged:neoforge", version.ref = "neoforge" }
 neoforge-mixinextras = { module = "io.github.llamalad7:mixinextras-neoforge", version.ref = "mixinextras" }
-neoforge-tacz = { module = "curse.maven:tacz-1-21-1-1353462", version.ref = "neoforge-tacz" }
+neoforge-tacz = { module = "curse.maven:timeless-and-classics-zero-1028108", version.ref = "neoforge-tacz" }
+neoforge-simplebedrockmodel = { module = "com.github.mcmodderanchor:simplebedrockmodel", version.ref = "simplebedrockmodel" }
 neoforge-kubejs = { module = "dev.latvian.mods:kubejs-neoforge", version.ref = "kubejs" }
 neoforge-jei = { module = "mezz.jei:jei-1.21.1-neoforge", version.ref = "jei" }
-neoforge-playeranimator = { module = "curse.maven:playeranimator-658587", version.ref = "neoforge-playeranimator" }
 ## Fabric
 fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }

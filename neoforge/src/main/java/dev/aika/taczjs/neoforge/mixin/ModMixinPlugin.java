@@ -26,19 +26,24 @@ public class ModMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (mixinClassName.endsWith(".ClientIndexManagerMixin")
-                || mixinClassName.endsWith(".InteractKeyTextOverlayMixin")
-                || mixinClassName.endsWith(".LivingEntityShootMixin")) {
-
-            try {
-                boolean containsVersion = VersionRange.createFromVersionSpec("[1.1.8,)")
-                        .containsVersion(new DefaultArtifactVersion(taczVersion));
-                return containsVersion && mixinClassName.contains(".v118.");
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+        if (mixinClassName.endsWith(".InteractKeyTextOverlayMixin")) {
+            if (isTaczVersionInRange("[1.2.0,)")) return mixinClassName.contains(".v120.");
+            if (isTaczVersionInRange("[1.1.8,)")) return mixinClassName.contains(".v118.");
+            return !mixinClassName.contains(".v118.") && !mixinClassName.contains(".v120.");
+        }
+        if (mixinClassName.endsWith(".ClientIndexManagerMixin") || mixinClassName.endsWith(".LivingEntityShootMixin")) {
+            return isTaczVersionInRange("[1.1.8,)") && mixinClassName.contains(".v118.");
         }
         return true;
+    }
+
+    private static boolean isTaczVersionInRange(String spec) {
+        try {
+            return VersionRange.createFromVersionSpec(spec)
+                    .containsVersion(new DefaultArtifactVersion(taczVersion));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

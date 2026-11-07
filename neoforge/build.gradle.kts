@@ -27,7 +27,9 @@ dependencies {
     forgeRuntimeLibrary(libs.commons.math3)
     forgeRuntimeLibrary(libs.luaj.core)
     forgeRuntimeLibrary(libs.luaj.jse)
-    modLocalRuntime(libs.neoforge.playeranimator)
+    forgeRuntimeLibrary(libs.tinyserver)
+    forgeRuntimeLibrary("com.maydaymemory:mae:${libs.versions.mae.get()}") { isTransitive = false }
+    modLocalRuntime(libs.neoforge.simplebedrockmodel)
     modLocalRuntime(libs.neoforge.jei)
 }
 
