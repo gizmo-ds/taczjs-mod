@@ -23,6 +23,7 @@
   "mixins": [
     "client.v118.InteractKeyTextOverlayMixin",
     "crafting.RecipeManagerMixin",
+    "resource.manager.AttachmentsTagManagerMixin",
     "resource.manager.CommonDataManagerMixin",
     "shooter.LivingEntityAimMixin",
     "shooter.LivingEntityMeleeMixin",
