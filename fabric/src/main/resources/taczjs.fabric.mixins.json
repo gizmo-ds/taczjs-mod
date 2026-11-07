@@ -19,7 +19,8 @@
     "client.LocalPlayerShootMixin",
     "client.ReloadableResourceManagerMixin",
     "client.v0_6.ClientIndexManagerMixin",
-    "client.v0_6.InteractKeyTextOverlayMixin"
+    "client.v0_6.InteractKeyTextOverlayMixin",
+    "client.v1_0.InteractKeyTextOverlayMixin"
   ],
   "mixins": [
     "crafting.RecipeManagerMixin",

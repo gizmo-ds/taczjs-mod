@@ -6,8 +6,8 @@ forge = "1.20.1-47.3.11"
 fabric-loader = "0.17.2"
 fabric-api = "0.92.6+1.20.1"
 kubejs = "2001.6.5-build.20"
-forge-tacz = "8055552-sources-8055584"
-fabric-tacz-refabricated = "8058511-sources-8058518"
+forge-tacz = "9454481-sources-9454610" # tacz-forge-1.20.1-1.2.0-
+fabric-tacz-refabricated = "9474235-sources-9474244" # tacz-refabricated-1.0.0-forge1.2.0+mc1.20.1
 forge-playeranimator = "4587214"
 fabric-playeranimator = "4587215"
 modmenu = "7.2.2"
@@ -20,7 +20,9 @@ fabric-forgeconfigapiport = "8.0.2"
 
 commons-math3 = "3.6.1"
 luaj = "3.0.8-figura"
-bcel = "6.6.1"
+bcel = "6.13.0"
+simplebedrockmodel = "2.6.2-forge-mc1.20.1"
+mae = "1.1.4"
 
 [plugins]
 architectury = { id = "architectury-plugin", version = "3.4-SNAPSHOT" }
@@ -38,6 +40,7 @@ forge-forge = { module = "net.minecraftforge:forge", version.ref = "forge" }
 forge-mixinextras = { module = "io.github.llamalad7:mixinextras-forge", version.ref = "mixinextras" }
 forge-tacz = { module = "curse.maven:timeless-and-classics-zero-1028108", version.ref = "forge-tacz" }
 forge-kubejs = { module = "dev.latvian.mods:kubejs-forge", version.ref = "kubejs" }
+forge-simplebedrockmodel = { module = "com.github.mcmodderanchor:simplebedrockmodel", version.ref = "simplebedrockmodel" }
 forge-jei = { module = "mezz.jei:jei-1.20.1-forge", version.ref = "jei" }
 forge-playeranimator = { module = "curse.maven:playeranimator-658587", version.ref = "forge-playeranimator" }
 ## Fabric

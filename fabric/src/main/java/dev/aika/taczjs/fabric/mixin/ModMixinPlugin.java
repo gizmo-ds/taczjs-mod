@@ -28,19 +28,25 @@ public class ModMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (mixinClassName.endsWith(".ClientIndexManagerMixin")
-                || mixinClassName.endsWith(".InteractKeyTextOverlayMixin")
-                || mixinClassName.endsWith(".LivingEntityShootMixin")) {
-            try {
-                SemanticVersionImpl version = (SemanticVersionImpl) Version.parse(taczVersion);
-                boolean containsVersion = VersionPredicateParser.parse(">=0.6.0")
-                        .test(new SemanticVersionImpl(version.getVersionComponents(), null, null));
-                return containsVersion && mixinClassName.contains(".v0_6.");
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+        if (mixinClassName.endsWith(".InteractKeyTextOverlayMixin")) {
+            if (isTaczVersionAtLeast(">=1.0.0")) return mixinClassName.contains(".v1_0.");
+            if (isTaczVersionAtLeast(">=0.6.0")) return mixinClassName.contains(".v0_6.");
+            return !mixinClassName.contains(".v0_6.") && !mixinClassName.contains(".v1_0.");
+        }
+        if (mixinClassName.endsWith(".ClientIndexManagerMixin") || mixinClassName.endsWith(".LivingEntityShootMixin")) {
+            return isTaczVersionAtLeast(">=0.6.0") && mixinClassName.contains(".v0_6.");
         }
         return true;
+    }
+
+    private static boolean isTaczVersionAtLeast(String predicate) {
+        try {
+            SemanticVersionImpl version = (SemanticVersionImpl) Version.parse(taczVersion);
+            return VersionPredicateParser.parse(predicate)
+                    .test(new SemanticVersionImpl(version.getVersionComponents(), null, null));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
