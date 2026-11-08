@@ -1,14 +1,24 @@
+### v1.5.0+mc1.20.1 - 2026-11-08
+
+- Add TaCZ 1.2.0 support
+- Add [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated) 1.0.0 support
+- Fix `attachmentTagsLoad` never firing, since TaCZ loads attachment tags outside of `CommonDataManager`
+- Fix the TypeScript definitions: drop `TaCZJSUtils.getRecipe`, add `TaCZJSUtils.getGunDisplay` and
+  `RecipeLoadEvent.getRecipeId`
+
 ### v1.4.2+mc1.20.1 - 2026-05-12
 
 - Add mixins for TaCZ 1.1.8+ [#22](https://github.com/gizmo-ds/taczjs-mod/issues/22)
 
 ### v1.4.1+mc1.20.1 - 2026-05-09
 
-- Add mixins for [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated) 0.6+ [#21](https://github.com/gizmo-ds/taczjs-mod/issues/21)
+- Add mixins for [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated)
+  0.6+ [#21](https://github.com/gizmo-ds/taczjs-mod/issues/21)
 
 ### v1.4.0+mc1.20.1 - 2026-01-11
 
-- Added [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated) support [#20](https://github.com/gizmo-ds/taczjs-mod/pull/20)
+- Added [TaCZ: Refabricated](https://github.com/Sh1roCu/TACZ-Refabricated)
+  support [#20](https://github.com/gizmo-ds/taczjs-mod/pull/20)
 
 ### v1.3.7+mc1.20.1 - 2025-12-02
 
