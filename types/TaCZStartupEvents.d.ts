@@ -34,6 +34,7 @@ interface AbstractLoadEvent {
     setJson(json: string): void;
 }
 interface RecipeLoadEvent extends AbstractLoadEvent {
+    getRecipeId(): ResourceLocation;
     getTableRecipe(): TableRecipe;
     removeRecipe(): void;
 }

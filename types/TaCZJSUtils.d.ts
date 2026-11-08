@@ -9,7 +9,8 @@ declare class TaCZJSUtils {
     static getGunIndex(gunId: ResourceLocation): CommonGunIndex;
     static getAmmoIndex(ammoId: ResourceLocation): CommonAmmoIndex;
     static getAttachmentIndex(attachmentId: ResourceLocation): CommonAttachmentIndex;
-    static getRecipe(recipeId: ResourceLocation): GunSmithTableRecipe;
+    /** client only */
+    static getGunDisplay(): GunDisplayInstance;
 }
 
 enum AnimationPlayType {
@@ -30,5 +31,5 @@ type CommonGunIndex = any;
 type CommonAmmoIndex = any;
 /** com.tacz.guns.resource.index.CommonAttachmentIndex */
 type CommonAttachmentIndex = any;
-/** com.tacz.guns.resource.index.GunSmithTableRecipe */
-type GunSmithTableRecipe = any;
+/** com.tacz.guns.client.resource.GunDisplayInstance */
+type GunDisplayInstance = any;
